@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Psychic Game</title>
+
+</head>
+<body>   
+
+    <div id="game">
+        <h1>The Psychic Game</h1>
+        <p id="directions-text">Guess which letter I'm thinking of</p>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="guessesLeft-text"></p>
+        <p id="yourGuessesSoFar-text"></p>
+    </div>
+
+    <script type="text/javascript">
+
+    // This is the arrary of letters for the computer to choose from.
+    var letterChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    // The variables below are created to store wins and losses.
+    var wins = 0;
+    var losses = 0;
+    
+    // The variable below shows how many guess are left (starting w/ 9), then decreases by 1 each time the users makes a guess.
+    var guessesLeft = 9;
+
+    // This functions will determine which key is pressed.
+    document.onkeyup = function(event) {
+
+
+
+
+
+    }
+    
+    
+    
+    //     
+    var computerGuess = letterChoices[Math.floor(Math.random() * letterChoices.length)];
+            
+    document.onkeyup = function(event) {
+        var userGuess = event.key;
+
+        if(userGuess === computerGuess) {
+            wins++;
+        } else{
+            guessesLeft--;
+        }
+        
+        if(guessesLeft === 0) {
+            losses++
+        }
+
+        document.getElementById("wins-text").innerHTML = "Wins: " + wins;
+        document.getElementById("losses-text").innerHTML = "Losses: " + losses;
+        document.getElementById("guessesLeft-text").innerHTML = "Guesses left: " + guessesLeft;
+    
+
+    }
+        
+
+        
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+       
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
