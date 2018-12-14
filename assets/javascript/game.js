@@ -1,4 +1,4 @@
-// This is the arrary of letters for the computer to choose from.
+// This is the arrary of letters for the computer and user to choose from.
 var letterChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // The variables below are created to store wins and losses.
@@ -21,11 +21,8 @@ document.onkeyup = function(event) {
     // This variable is to store the random letter chosen by the computer.
     var computerChoice = letterChoices[Math.floor(Math.random() * letterChoices.length)];
 
-    // I created another letter array because my if/else logic below would not work with the 1st array (letterChoices).
-    var letterOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
     // This function will search if playerGuess is in the letterChoices array, so only letter guess will be accepted.
-    if (letterOptions.indexOf(playerGuess) > -1) {
+    if (letterChoices.indexOf(playerGuess) > -1) {
     
     // This logic is to determine the wins, losses and guesses left.
         if (playerGuess === computerChoice) {
@@ -46,11 +43,10 @@ document.onkeyup = function(event) {
              
         // Displays the HTML content on the screen and updates the values after each player guess.
         var html =
-        "<h1> The Psychic Game </h1>" +
         "<p>Guess which letter I'm thinking of!</p>" +
         "<p>Wins: "+ wins + "<p>" +
         "<p>Losses: " + losses + "<p>" +
-        "<p>Guess Left: " + guessesLeft + "<p>" +
+        "<p>Guesses Left: " + guessesLeft + "<p>" +
         "<p>Your Guesses So Far: " + playerGuessesSoFar.join(", ") + "<p>";
 
         document.querySelector("#psychic-game").innerHTML = html;
