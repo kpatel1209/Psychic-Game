@@ -1,5 +1,4 @@
 # Psychic Game
-The Psychic Game
 
 The Psychic will pick a random letter from A-Z and it's up to you to guess the same letter.  
 
